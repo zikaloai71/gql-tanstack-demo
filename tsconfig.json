@@ -1,0 +1,19 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "target": "ES2020",                  // Must support ES2020 or later for decorators
+    "module": "ESNext",                  // Use ESNext for module resolution
+    "experimentalDecorators": true,      // Enable decorators
+    "emitDecoratorMetadata": true,       // Enable metadata emission
+    "strict": true,                      // Optional but recommended
+    "moduleResolution": "Node"           // Ensure Node module resolution
+  }
+}
