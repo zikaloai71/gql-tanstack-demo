@@ -3,6 +3,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import { Toaster } from '@/components/ui/sonner';
 import { AppRoutes } from '@/adapters/routes/AppRoutes';
+import 'reflect-metadata';
 
 const queryClient = new QueryClient();
 

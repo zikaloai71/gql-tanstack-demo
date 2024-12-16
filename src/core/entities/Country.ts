@@ -1,10 +1,35 @@
-import { z } from "zod";
+import { Country } from '@/gql/graphql';
+
+import { IsNotEmpty, IsOptional, IsString, validateSync} from 'class-validator';
+import {  plainToClass, Expose, Transform } from 'class-transformer';
+
+export class CountryDTO  {
+  @Expose({ name: 'name' })
+  @Transform(({ value }) => value?.toLowerCase())
+  @IsNotEmpty()
+  countryName!: string;
+
+  @IsOptional()
+  @IsString()
+  currency?: string;
+
+  @IsNotEmpty()
+  phone!: string;
+}
+
+export function validateAndTransformCountries(data: Country[]): CountryDTO[] {
+  return data.map(country => {
+   
+    const countryDTO = plainToClass(CountryDTO, country);
+
+    const errors = validateSync(countryDTO, { whitelist: true, forbidNonWhitelisted: true });
+  
+    if (errors.length > 0) {
+      throw new Error(`Validation failed: ${errors.map(err => JSON.stringify(err.constraints)).join(', ')}`);
+    }
+   
+    return countryDTO;
+  });
+}
 
 
-export const CountrySchema = z.object({
-  name: z.string().min(1, "Name is required").max(100, "Name is too long"),
-  phone: z.string().min(1, "Phone is required").max(100, "Phone is too long"),
-  currency: z.string().min(1, "Currency is required").max(100, "Currency is too long"),
-});
-
-export type Country = z.infer<typeof CountrySchema>;
