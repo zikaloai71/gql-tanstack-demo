@@ -1,15 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import UserList from "../controllers/pages/users";
-import { UserForm } from "../controllers/domains/Users/UserForm";
-import NotFound from "../controllers/NotFound";
+import CountryList from "../presentation/pages/countries";
+import NotFound from "../presentation/NotFound";
 
 export const AppRoutes: React.FC = () => (
   <Router>
     <Routes>
-      <Route path="/" element={<UserList />} />
-      <Route path="/users/new" element={<UserForm />} />
-      <Route path="/users/edit/:id" element={<UserForm />} />
+      <Route path="/" element={<CountryList />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </Router>

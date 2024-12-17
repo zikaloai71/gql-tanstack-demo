@@ -3,7 +3,7 @@ import React from "react";
 import { useCountriesQueries } from "@/infrastructure/hooks/useCountries";
 import { Input } from "@/components/ui/input";
 
-export const UserList: React.FC = () => {
+export const CountryList: React.FC = () => {
   const [searchValue, setSearchValue] = React.useState("");
 
   const { useGetAllCountries } = useCountriesQueries();

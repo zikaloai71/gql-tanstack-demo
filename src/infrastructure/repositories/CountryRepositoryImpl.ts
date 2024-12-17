@@ -1,9 +1,11 @@
 import { injectable } from "inversify";
 
-import { CountryRepository } from "@/adapters/gateways/CountryRepository";
+import { CountryRepository } from "@/adapters/interfaces/CountryRepository";
 import {  CountryService } from "../api/CountryService";
-import { CountryFilterInput } from "@/gql/graphql";
-import { validateAndTransformCountries } from "@/core/entities/Country";
+
+
+import { CountryFilterInput } from "../gql/graphql";
+import { validateAndTransformCountries } from "@/adapters/mappers/CountryMapper";
 
 
 

@@ -1,9 +1,8 @@
-import { Country } from '@/gql/graphql';
+import { IsNotEmpty, IsOptional, IsString} from 'class-validator';
+import {Expose, Transform} from 'class-transformer';
 
-import { IsNotEmpty, IsOptional, IsString, validateSync} from 'class-validator';
-import {  plainToClass, Expose, Transform } from 'class-transformer';
 
-export class CountryDTO  {
+export class CountryEntity  {
   @Expose({ name: 'name' })
   @Transform(({ value }) => value?.toLowerCase())
   @IsNotEmpty()
@@ -17,19 +16,5 @@ export class CountryDTO  {
   phone!: string;
 }
 
-export function validateAndTransformCountries(data: Country[]): CountryDTO[] {
-  return data.map(country => {
-   
-    const countryDTO = plainToClass(CountryDTO, country);
-
-    const errors = validateSync(countryDTO, { whitelist: true, forbidNonWhitelisted: true });
-  
-    if (errors.length > 0) {
-      throw new Error(`Validation failed: ${errors.map(err => JSON.stringify(err.constraints)).join(', ')}`);
-    }
-   
-    return countryDTO;
-  });
-}
 
 

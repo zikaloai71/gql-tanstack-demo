@@ -7,7 +7,7 @@ const config: CodegenConfig = {
   schema: "https://countries.trevorblades.com",
   documents: 'src/**/*.{ts,tsx}',
   generates: {
-    "./src/gql/": {
+    "./src/infrastructure/gql/": {
       preset: "client",
       plugins: [ 'typescript', // Generate TypeScript types for schema
         'typescript-operations', // Generate TypeScript types for queries/mutations

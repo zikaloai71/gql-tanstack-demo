@@ -1,4 +1,4 @@
-import { CountryRepository } from "@/adapters/gateways/CountryRepository";
+import { CountryRepository } from "@/adapters/interfaces/CountryRepository";
 
 export class GetCountries {
   constructor(private countryRepository: CountryRepository) {}
