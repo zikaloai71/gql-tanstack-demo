@@ -1,9 +1,9 @@
-import { CountryDTO } from "@/core/entities/Country";
-import { CountryFilterInput } from "@/gql/graphql";
+import { CountryEntity } from "@/core/entities/Country";
+import { CountryFilterInput } from "@/infrastructure/gql/graphql";
 
 
 export interface CountryRepository {
-  getCountries(input?:CountryFilterInput): Promise<CountryDTO[]>;
+  getCountries(input?:CountryFilterInput): Promise<CountryEntity[]>;
 }
 
 

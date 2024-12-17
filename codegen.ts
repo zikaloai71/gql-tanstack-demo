@@ -1,6 +1,4 @@
-
 import type { CodegenConfig } from '@graphql-codegen/cli';
-
 
 const config: CodegenConfig = {
   overwrite: true,
@@ -9,9 +7,7 @@ const config: CodegenConfig = {
   generates: {
     "./src/infrastructure/gql/": {
       preset: "client",
-      plugins: [ 'typescript', // Generate TypeScript types for schema
-        'typescript-operations', // Generate TypeScript types for queries/mutations
-        ]
+      plugins: []
     },
     "./graphql.schema.json": {
       plugins: ["introspection"]

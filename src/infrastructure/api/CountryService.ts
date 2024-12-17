@@ -18,8 +18,9 @@ const countryQuery =  new CountriesQueries();
 
 
 import { graphQLClient } from './GraphQLInstance';
+import { CountryFilterInput, Query } from "../gql/graphql";
 
-import { CountryFilterInput, Query } from "@/gql/graphql";
+
 
 
 
