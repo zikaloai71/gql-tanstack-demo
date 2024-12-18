@@ -3,11 +3,11 @@ import {Expose, Transform} from 'class-transformer';
 
 
 export class CountryEntity  {
-  @Expose({ name: 'name' })
+  @Expose({ name: 'name'})
   @Transform(({ value }) => value?.toLowerCase())
   @IsNotEmpty()
   countryName!: string;
-
+  
   @IsOptional()
   @IsString()
   currency?: string;

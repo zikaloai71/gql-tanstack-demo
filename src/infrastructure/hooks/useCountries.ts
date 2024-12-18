@@ -5,8 +5,6 @@ import { CountryRepository } from '@/adapters/interfaces/CountryRepository';
 import { CountryFilterInput } from '../gql/graphql';
 
 
-
-
  export const useCountriesQueries = () => {
    const CountryRepository = container.get<CountryRepository>(TYPES.CountryRepository);
  

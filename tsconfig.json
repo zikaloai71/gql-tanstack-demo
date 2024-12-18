@@ -16,6 +16,8 @@
     "emitDecoratorMetadata": true,
     "strict": true,
     "moduleResolution": "Node",
-  }
+ 
+  },
+  "exclude": ["src/infrastructure/gql/gql.ts"]
 }
 
