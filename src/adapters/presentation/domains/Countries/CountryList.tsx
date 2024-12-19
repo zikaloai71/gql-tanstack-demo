@@ -15,7 +15,8 @@ export const CountryList: React.FC = () => {
           //   regex: `${searchValue ? `.*${searchValue}.*` : "" }`,
           // },
           [filter?.field]: {
-            in: filter?.value,
+            in: [filter?.value],
+            
           },
         }
       : {}
@@ -39,7 +40,7 @@ export const CountryList: React.FC = () => {
       <DataGrid
         rows={countriesWithId || []}
         columns={[
-          { field: "countryName", headerName: "Name" },
+          { field: "name", headerName: "Name" },
           { field: "currency", headerName: "currency" },
           { field: "phone", headerName: "Phone Code" },
         ]}

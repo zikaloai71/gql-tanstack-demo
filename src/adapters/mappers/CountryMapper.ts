@@ -32,6 +32,3 @@ export function validateAndTransformCountry(data: Country): CountryEntity {
 }
 
 
-// 1- how to customize minimals ui template by using custom design tokens 
-// 2- how to customize different components in minimals (grid,table)
-// 3- what is the structure of minimals.
