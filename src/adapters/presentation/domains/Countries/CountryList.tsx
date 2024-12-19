@@ -40,7 +40,7 @@ export const CountryList: React.FC = () => {
       <DataGrid
         rows={countriesWithId || []}
         columns={[
-          { field: "name", headerName: "Name" },
+          { field: "countryName", headerName: "Name" },
           { field: "currency", headerName: "currency" },
           { field: "phone", headerName: "Phone Code" },
         ]}
