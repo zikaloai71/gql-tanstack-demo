@@ -1,9 +1,4 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
@@ -16,8 +11,12 @@
     "emitDecoratorMetadata": true,
     "strict": true,
     "moduleResolution": "Node",
- 
+    "jsx": "react-jsx",
+    "composite": true,
+    "emitDeclarationOnly": true,
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true
   },
-  "exclude": ["src/infrastructure/gql/gql.ts"]
+  "include": ["src"]
 }
 
